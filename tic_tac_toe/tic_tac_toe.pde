@@ -47,7 +47,7 @@ void keyPressed(){
       }
       
       if (aBoard.isBoardFull()){
-        println("[ THE GAME IS A STATEMATE, THERE IS NO WINNER. ] ");
+        println("[ THE GAME IS A STALEMATE, THERE IS NO WINNER. ] ");
         gameStateOver = true;
         return;
       }
