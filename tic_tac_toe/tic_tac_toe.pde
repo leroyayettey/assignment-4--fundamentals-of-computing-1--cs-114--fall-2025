@@ -49,9 +49,12 @@ void keyPressed(){
         return;
       }
       
-      println("")
+      println("[ GAME IS STILL ACTIVE ]");
       
-      
+    } else {
+      println("[ CELL HAS ALREADY BEEN PLAYED. ]");
+    } 
+  } else {
+      println("[ INVALID KEY SELECTION. ENTER A CELL NUMBER (0 - 8) ONLY. ]");
     }
   }
-}
