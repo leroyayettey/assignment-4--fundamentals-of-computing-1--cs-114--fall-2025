@@ -7,12 +7,12 @@ class Board {
     }
   }
   void drawBoard(){
-    drawGrid();
-    drawMarks();
+    drawBoardGrid();
+    drawPlayerMark();
   }
   
-  void drawGrid(){
-    stroke(gridColor);
+  void drawBoardGrid(){
+    stroke(boardGridColor);
     strokeWeight(6);
     
     line(cellSize, 0, cellSize, boardSize);
@@ -22,7 +22,7 @@ class Board {
     line(0, cellSize * 2, boardSize, cellSize * 2);
   }
   
-  drawPlayerMark(){
+  void drawPlayerMark(){
     for (int i = 0; i < cellCount; i++){
       float xCoordinate = (i % 3) * cellSize;
       float yCoordinate = floor(i/3) * cellSize;
@@ -51,7 +51,7 @@ class Board {
     for (int i = 0; i < cellCount; i++){
       if (isCellEmpty(i)){
         placeMark(i, xMark);
-        println("[ Computer placed an X in cell " + i);
+        println("[ Computer placed an X in cell " + i + ". ]");
         return;
       }
     }
@@ -70,9 +70,9 @@ class Board {
   
   boolean isBoardFull(){
     for(int i = 0; i < cellCount; i++){
-      if (cells[i] == emptyCell){
-      return false;
+      if (cells[i] == emptyCell) 
+     return false;
       }
+      return true;
     }
   }
-}

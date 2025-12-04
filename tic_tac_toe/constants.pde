@@ -1,5 +1,5 @@
 final color boardColor = color(45, 62, 64);
-final color gridColor = color(147, 191, 183);
+final color boardGridColor = color(147, 191, 183);
 final color markColor = color(228, 242, 231);
 
 final int emptyCell = 0;

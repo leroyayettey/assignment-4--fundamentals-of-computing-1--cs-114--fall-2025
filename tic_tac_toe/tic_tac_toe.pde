@@ -1,11 +1,14 @@
 Board aBoard;
 boolean gameStateOver = false;
 
-void setup(){
+void settings(){
   size(boardSize, boardSize);
+}
+
+void setup(){
   aBoard = new Board();
   
-  println("[ WELCOME TO TIK-TAC-TOE.] \n\n [ * THE COMPUTER ALWAYS STARTS AND PLAYS X BY DEFAULT. ]");
+  println("[ WELCOME TO TIK-TAC-TOE.] \n\n[ * THE COMPUTER ALWAYS STARTS AND PLAYS X BY DEFAULT. * ]");
   
   aBoard.computerTurn();
 }
