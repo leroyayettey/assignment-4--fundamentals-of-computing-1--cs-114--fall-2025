@@ -1,7 +1,57 @@
-void setup() {
-  size(500, 500);
-  color boardColor = ()
+Board aBoard;
+boolean gameStateOver = false;
+
+void setup(){
+  size(boardSize, boardSize);
+  aBoard = new Board();
+  
+  println("[ WELCOME TO TIK-TAC-TOE.] \n\n [ * THE COMPUTER ALWAYS STARTS AND PLAYS X BY DEFAULT. ]");
+  
+  aBoard.computerTurn();
 }
 
-void draw() {
+void draw(){
+  background(boardColor);
+  aBoard.drawBoard();
+}
+
+void keyPressed(){
+  
+  if (gameStateOver == true) {
+    println("[ THE GAME IS OVER. NO MORE MOVES ARE PERMITTED. ]");
+    return;
+  }
+  
+  if (key >= '0' && key <= '8'){
+    int index = key - '0';
+    
+    if (aBoard.isCellEmpty(index)){
+      
+      aBoard.placeMark(index, oMark);
+      
+      if (aBoard.checkWinCombination(oMark)){
+        println("[ THE USER (O) WINS THE MATCH. ]");
+        gameStateOver = true;
+        return;
+      }
+      
+      aBoard.computerTurn();
+      
+      if (aBoard.checkWinCombination(xMark)){
+        println("[ THE COMPUTER (X) WINS THE MATCH. ]");
+        gameStateOver = true;
+        return;
+      }
+      
+      if (aBoard.isBoardFull()){
+        println("[ THE GAME IS A STATEMATE, THERE IS NO WINNER. ] ");
+        gameStateOver = true;
+        return;
+      }
+      
+      println("")
+      
+      
+    }
+  }
 }
